@@ -10,7 +10,7 @@
   <header>
     <h1>Janelle's Coffee Craft</h1>
     <nav>
-      <ul>
+      <ul style="list-style-type: none; padding: 0;">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -28,6 +28,41 @@
       <li><strong>Phone:</strong> +63 912 345 6789</li>
       <li><strong>Address:</strong> Sampaloc, Manila, Philippines</li>
     </ul>
+
+    <form style="max-width: 500px; margin: 30px auto; text-align: left;">
+      <fieldset style="padding: 20px; border-radius: 8px;">
+        <legend><strong>Your details</strong></legend>
+
+        <p>
+          <label for="user-name">Name:</label><br>
+          <input type="text" id="user-name" name="user-name" required style="width: 100%; box-sizing: border-box; margin-top: 5px;">
+        </p>
+
+        <p>
+          <label for="user-email">Email:</label><br>
+          <input type="email" id="user-email" name="user-email" required style="width: 100%; box-sizing: border-box; margin-top: 5px;">
+        </p>
+
+        <p>
+          <label for="subject">Subject:</label><br>
+          <select id="subject" name="subject" style="width: 100%; box-sizing: border-box; margin-top: 5px; padding: 5px;">
+            <option value="product-question">Product Question</option>
+            <option value="order-status">Order Status</option>
+            <option value="wholesale-inquiry">Wholesale Enquiry</option>
+            <option value="something-else">Something Else</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" required style="width: 100%; box-sizing: border-box; margin-top: 5px;"></textarea>
+        </p>
+
+        <p style="text-align: center;">
+          <button type="submit" style="padding: 10px 20px; cursor: pointer;">Send message</button>
+        </p>
+      </fieldset>
+    </form>
   </main>
 
   <footer>
