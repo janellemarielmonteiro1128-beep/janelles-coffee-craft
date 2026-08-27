@@ -4,63 +4,135 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Janelle's Coffee Craft - Contact</title>
+  <style>
+    /* Body & Page Colors */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f3ef; /* Warm cream background */
+      color: #333333;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Navigation Links */
+    nav a {
+      color: #4a2c2a; /* Coffee brown */
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      color: #a0522d;
+    }
+
+    /* Form Card Container */
+    form {
+      max-width: 450px;
+      margin: 25px auto;
+      text-align: left;
+    }
+
+    fieldset {
+      background-color: #ffffff; /* White card */
+      border: 2px solid #d7c4b7; /* Subtle beige border */
+      border-radius: 10px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    legend {
+      font-weight: bold;
+      color: #4a2c2a;
+      padding: 0 8px;
+      font-size: 1.1rem;
+    }
+
+    /* Input Fields & Dropdown */
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: #fafafa;
+    }
+
+    /* Field Focus (Highlighting when clicked) */
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4a2c2a;
+      outline: none;
+      background-color: #ffffff;
+    }
+
+    /* Submit Button */
+    button[type="submit"] {
+      width: 100%;
+      background-color: #4a2c2a; /* Deep coffee color */
+      color: #ffffff;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #6b3e3b;
+    }
+  </style>
 </head>
-<body style="text-align: center;">
+<body>
 
   <header>
     <h1>Janelle's Coffee Craft</h1>
     <nav>
-      <ul style="list-style-type: none; padding: 0;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <img src="contact-banner.jpg" alt="Anime coffee bean grinder aesthetic banner" width="450" style="height: auto; margin-top: 20px; border-radius: 8px;">
+    <img src="contact-banner.jpg" alt="Anime coffee bean grinder aesthetic banner" width="450" style="height: auto; border-radius: 8px; margin-top: 15px;">
 
     <h2>How to contact us!</h2>
 
-    <ul style="list-style-type: none; padding: 0;">
-      <li><strong>Email:</strong> support@janellescoffeecraft.com</li>
-      <li><strong>Phone:</strong> +63 912 345 6789</li>
-      <li><strong>Address:</strong> Sampaloc, Manila, Philippines</li>
-    </ul>
+    <p><strong>Email:</strong> support@janellescoffeecraft.com</p>
+    <p><strong>Phone:</strong> +63 912 345 6789</p>
+    <p><strong>Address:</strong> Sampaloc, Manila, Philippines</p>
 
-    <form style="max-width: 500px; margin: 30px auto; text-align: left;">
-      <fieldset style="padding: 20px; border-radius: 8px;">
-        <legend><strong>Your details</strong></legend>
+    <form action="contact.html" method="get">
+      <fieldset>
+        <legend>Your details</legend>
 
-        <p>
-          <label for="user-name">Name:</label><br>
-          <input type="text" id="user-name" name="user-name" required style="width: 100%; box-sizing: border-box; margin-top: 5px;">
-        </p>
+        <label for="user-name">Name:</label>
+        <input type="text" id="user-name" name="user-name" required>
 
-        <p>
-          <label for="user-email">Email:</label><br>
-          <input type="email" id="user-email" name="user-email" required style="width: 100%; box-sizing: border-box; margin-top: 5px;">
-        </p>
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" name="user-email" required>
 
-        <p>
-          <label for="subject">Subject:</label><br>
-          <select id="subject" name="subject" style="width: 100%; box-sizing: border-box; margin-top: 5px; padding: 5px;">
-            <option value="product-question">Product Question</option>
-            <option value="order-status">Order Status</option>
-            <option value="wholesale-inquiry">Wholesale Enquiry</option>
-            <option value="something-else">Something Else</option>
-          </select>
-        </p>
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject">
+          <option value="product-question">Product Question</option>
+          <option value="order-status">Order Status</option>
+          <option value="wholesale-inquiry">Wholesale Enquiry</option>
+          <option value="something-else">Something Else</option>
+        </select>
 
-        <p>
-          <label for="message">Message:</label><br>
-          <textarea id="message" name="message" rows="5" required style="width: 100%; box-sizing: border-box; margin-top: 5px;"></textarea>
-        </p>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-        <p style="text-align: center;">
-          <button type="submit" style="padding: 10px 20px; cursor: pointer;">Send message</button>
-        </p>
+        <button type="submit">Send message</button>
       </fieldset>
     </form>
   </main>
