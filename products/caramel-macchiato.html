@@ -3,58 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Janelle's Coffee Craft - Caramel Macchiato</title>
+  <title>Caramel Macchiato - Janelle's Coffee Craft</title>
 </head>
-<body bgcolor="#f7f3ef" text="#333333" link="#4a2c2a" vlink="#4a2c2a" alink="#a0522d" align="center">
+<body bgcolor="#f7f3ef" text="#333333" link="#4a2c2a" vlink="#4a2c2a" alink="#a0522d" align="center" style="font-family: Arial, sans-serif; margin: 0; padding: 20px;">
 
+  <!-- Navigation Bar (Using ../ to go up one level) -->
   <header>
-    <h1>Janelle's Coffee Craft</h1>
+    <h1 style="color: #4a2c2a; margin-bottom: 5px;">Janelle's Coffee Craft</h1>
     <nav>
-      <a href="../index.html">Home</a> |
-      <a href="../about.html">About</a> |
-      <a href="../contact.html">Contact</a>
+      <a href="../index.html" style="font-weight: bold; text-decoration: none;">Home</a> |
+      <a href="../about.html" style="font-weight: bold; text-decoration: none;">About</a> |
+      <a href="../contact.html" style="font-weight: bold; text-decoration: none;">Contact</a>
     </nav>
   </header>
 
-  <hr width="80%">
+  <hr width="80%" color="#d4c3b3" style="margin: 20px auto;">
 
-  <main>
-    <h2>Caramel Macchiato (Warehouse Coffee)</h2>
+  <main style="max-width: 600px; margin: 0 auto;">
 
-    <img src="../coffee 1.jpg" alt="Caramel Macchiato" width="350">
-
-    <p>Our signature Caramel Macchiato is crafted with freshly pulled espresso shots layered over velvety steamed milk and sweet vanilla syrup. Finished with a decadent crisscross drizzle of rich butter caramel sauce, this classic beverage offers a perfect harmony of bold coffee flavor and smooth caramel sweetness.</p>
-
-    <h3>Product Specifications</h3>
-
-    <table border="1" cellpadding="8" cellspacing="0" align="center" bgcolor="#ffffff">
-      <tr bgcolor="#e0d6cc">
-        <th>Attribute</th>
-        <th>Details</th>
-      </tr>
+    <!-- Product Showcase -->
+    <table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width: 550px; width: 100%; margin-bottom: 25px;">
       <tr>
-        <td><b>Base Ingredients</b></td>
-        <td>Espresso, Whole Milk, Vanilla Syrup, Caramel Drizzle</td>
-      </tr>
-      <tr>
-        <td><b>Serving Size</b></td>
-        <td>16 oz (Medium / Iced)</td>
-      </tr>
-      <tr>
-        <td><b>Roast Level</b></td>
-        <td>Medium-Dark Roast</td>
-      </tr>
-      <tr>
-        <td><b>Price</b></td>
-        <td>₱130</td>
+        <td>
+          <fieldset style="background-color: #ffffff; border: 2px solid #8c6239; border-radius: 10px; padding: 20px; text-align: center;">
+            <legend style="background-color: #4a2c2a; color: #ffffff; padding: 4px 12px; border-radius: 15px; font-weight: bold;">Featured Beverage</legend>
+            
+            <h2 style="color: #4a2c2a; margin: 10px 0;">Caramel Macchiato</h2>
+            <p style="color: #8c6239; font-weight: bold; font-size: 18px; margin: 5px 0;">₱165.00</p>
+            <p style="color: #555555; line-height: 1.6;">Freshly steamed milk with vanilla-flavored syrup, marked with espresso and topped with a sweet caramel drizzle.</p>
+            
+            <img src="../coffee1.jpg" alt="Caramel Macchiato" width="260" style="border-radius: 8px; border: 1px solid #d4c3b3; margin: 10px 0;">
+          </fieldset>
+        </td>
       </tr>
     </table>
+
+    <!-- ORDER ENQUIRY FORM -->
+    <form action="caramel-macchiato.html" method="get">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width: 550px; width: 100%;">
+        <tr>
+          <td>
+            <fieldset style="background-color: #ffffff; border: 2px solid #8c6239; border-radius: 10px; padding: 25px; text-align: left;">
+              <legend style="background-color: #4a2c2a; color: #ffffff; padding: 6px 15px; border-radius: 20px; font-weight: bold; font-size: 15px;">Order Enquiry</legend>
+
+              <p style="color: #555555; margin-top: 0; margin-bottom: 15px;">Interested in ordering this drink? Fill out the details below to inquire.</p>
+
+              <!-- Required Contact Email -->
+              <label for="enquiry-email" style="color: #4a2c2a; font-weight: bold; display: block; margin-bottom: 5px;">Contact Email <span style="color: #c0392b;">*</span></label>
+              <input type="email" id="enquiry-email" name="enquiry-email" required placeholder="your.email@example.com" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; margin-bottom: 15px; font-size: 14px;">
+
+              <!-- Quantity Input -->
+              <label for="order-quantity" style="color: #4a2c2a; font-weight: bold; display: block; margin-bottom: 5px;">Quantity (1-20)</label>
+              <input type="number" id="order-quantity" name="order-quantity" min="1" max="20" value="1" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; margin-bottom: 15px; font-size: 14px;">
+
+              <!-- Delivery Method (Radio buttons inside fieldset with legend) -->
+              <fieldset style="border: 1px solid #d4c3b3; border-radius: 6px; padding: 12px 15px; margin-bottom: 15px;">
+                <legend style="color: #4a2c2a; font-weight: bold; padding: 0 5px;">Select Delivery Method</legend>
+                
+                <input type="radio" id="delivery-pickup" name="delivery-method" value="pickup" checked>
+                <label for="delivery-pickup" style="margin-right: 15px; cursor: pointer;">Store Pickup</label>
+                
+                <input type="radio" id="delivery-standard" name="delivery-method" value="standard">
+                <label for="delivery-standard" style="margin-right: 15px; cursor: pointer;">Standard Delivery</label>
+                
+                <input type="radio" id="delivery-express" name="delivery-method" value="express">
+                <label for="delivery-express" style="cursor: pointer;">Express Delivery</label>
+              </fieldset>
+
+              <!-- Optional Extras (Checkboxes sharing one name) -->
+              <fieldset style="border: 1px solid #d4c3b3; border-radius: 6px; padding: 12px 15px; margin-bottom: 20px;">
+                <legend style="color: #4a2c2a; font-weight: bold; padding: 0 5px;">Optional Extras</legend>
+                
+                <div style="margin-bottom: 8px;">
+                  <input type="checkbox" id="extra-giftwrap" name="optional-extras" value="giftwrap">
+                  <label for="extra-giftwrap" style="cursor: pointer;">Gift Wrapping (+₱20)</label>
+                </div>
+                
+                <div style="margin-bottom: 8px;">
+                  <input type="checkbox" id="extra-shot" name="optional-extras" value="extra-espresso">
+                  <label for="extra-shot" style="cursor: pointer;">Extra Espresso Shot (+₱30)</label>
+                </div>
+                
+                <div>
+                  <input type="checkbox" id="extra-handling" name="optional-extras" value="priority-handling">
+                  <label for="extra-handling" style="cursor: pointer;">Priority Handling (+₱15)</label>
+                </div>
+              </fieldset>
+
+              <!-- Submit Button -->
+              <div align="center">
+                <button type="submit" style="background-color: #4a2c2a; color: #ffffff; border: none; padding: 12px 28px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer;">Submit Enquiry</button>
+              </div>
+
+            </fieldset>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <br>
+    <a href="../index.html" style="color: #4a2c2a; font-weight: bold; text-decoration: none;">&larr; Back to Shop Menu</a>
+
   </main>
 
-  <br><hr width="80%">
+  <br><hr width="80%" color="#d4c3b3" style="margin: 20px auto;">
 
   <footer>
-    <p>&copy; 2026 Janelle's Coffee Craft. All rights reserved.</p>
+    <p style="color: #777777; font-size: 14px;">&copy; 2026 Janelle's Coffee Craft. All rights reserved.</p>
   </footer>
 
 </body>
