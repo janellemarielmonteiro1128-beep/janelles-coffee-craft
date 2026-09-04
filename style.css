@@ -2,8 +2,8 @@
    1. VARIABLES
    ========================================================================== */
 :root {
-  --brand-color: #4a2c2a;
-  --accent-color: #8c6239;
+  --brand: #4a2c2a;
+  --accent: #8c6239;
   --dark-ink: #333333;
   --muted-grey: #555555;
   --light-bg: #f7f3ef;
@@ -24,19 +24,25 @@ body {
   color: var(--dark-ink);
   background-color: var(--light-bg);
   margin: 0;
-  padding: 0;
+  padding: 20px;
   text-align: center;
 }
 
-h1, h2, h3 {
-  margin-top: 0;
+/* Accessible focus outline for keyboard users */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
 }
 
 /* ==========================================================================
    3. LAYOUT REGIONS
    ========================================================================== */
 header {
-  background-color: var(--brand-color);
+  background-color: var(--brand);
   color: #ffffff;
   padding: 20px 0;
   margin-bottom: 30px;
@@ -47,7 +53,6 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* 🧭 Style the Nav (Horizontal Bar Requirement) */
 nav ul {
   list-style: none;
   padding: 0;
@@ -60,19 +65,19 @@ nav li {
 }
 
 nav a {
-  color: #ffffff;
-  text-decoration: none;
+  color: #ffffff !important;
   font-weight: bold;
+  text-decoration: none;
 }
 
 nav a:hover {
-  color: var(--border-color);
+  color: var(--border-color) !important;
 }
 
 main {
-  max-width: 800px;
+  max-width: 650px;
   margin: 0 auto;
-  padding: 0 20px;
+  text-align: center;
 }
 
 footer {
@@ -82,29 +87,30 @@ footer {
 }
 
 /* ==========================================================================
-   4. COMPONENTS
+   4. PRODUCT CARDS
    ========================================================================== */
 .product-card {
   background-color: var(--card-bg);
-  border: 2px solid var(--border-color);
   border-radius: 10px;
-  padding: 20px;
-  margin: 0 auto 25px auto;
-  max-width: 500px;
-}
-
-.product-card.signature {
-  border-color: var(--accent-color);
+  padding: 20px; /* At least 16px padding */
+  margin-bottom: 25px; /* Keeps cards from touching */
+  border: 1px solid var(--border-color);
+  border-left: 6px solid var(--brand); /* Coloured left border using brand variable */
+  text-align: center;
 }
 
 .product-card h3 {
-  color: var(--brand-color);
+  color: var(--brand); /* Distinct color for product name */
+  font-size: 1.3rem;   /* Distinct font-size for product name */
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .product-price {
-  color: var(--accent-color);
+  color: var(--accent);
   font-weight: bold;
   font-size: 1.1rem;
+  margin: 5px 0 10px 0;
 }
 
 .product-card img {
@@ -112,4 +118,71 @@ footer {
   border: 1px solid var(--border-color);
   max-width: 100%;
   height: auto;
+}
+
+.product-card a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   5. CONTACT FORM
+   ========================================================================== */
+form {
+  max-width: 450px;
+  margin: 25px auto;
+  text-align: left;
+}
+
+fieldset {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px 25px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--brand);
+  padding: 0 8px;
+  font-size: 1.1rem;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: var(--dark-ink);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: #fafafa;
+  color: var(--dark-ink);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--brand);
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--accent);
 }

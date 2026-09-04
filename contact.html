@@ -65,12 +65,14 @@
       background-color: #fafafa;
     }
 
-    /* Field Focus */
+    /* Accessible Focus State for Keyboard Users (Task 5.2 requirement) */
     input:focus,
     select:focus,
-    textarea:focus {
+    textarea:focus,
+    button:focus {
       border-color: #4a2c2a;
-      outline: none;
+      outline: 3px solid #4a2c2a;
+      outline-offset: 2px;
       background-color: #ffffff;
     }
 

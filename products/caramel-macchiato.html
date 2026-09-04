@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caramel Macchiato - Janelle's Coffee Craft</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Task 5.2 Accessibility Focus Rules */
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus,
+    a:focus {
+      outline: 3px solid #4a2c2a;
+      outline-offset: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+  </style>
 </head>
 <body bgcolor="#f7f3ef" text="#333333" link="#4a2c2a" vlink="#4a2c2a" alink="#a0522d" align="center" style="font-family: Arial, sans-serif; margin: 0; padding: 20px;">
 
@@ -12,9 +34,11 @@
   <header>
     <h1 style="color: #4a2c2a; margin-bottom: 5px;">Janelle's Coffee Craft</h1>
     <nav>
-      <a href="../index.html" style="font-weight: bold; text-decoration: none;">Home</a> |
-      <a href="../about.html" style="font-weight: bold; text-decoration: none;">About</a> |
-      <a href="../contact.html" style="font-weight: bold; text-decoration: none;">Contact</a>
+      <ul>
+        <li><a href="../index.html" style="font-weight: bold; text-decoration: none;">Home</a></li>
+        <li><a href="../about.html" style="font-weight: bold; text-decoration: none;">About</a></li>
+        <li><a href="../contact.html" style="font-weight: bold; text-decoration: none;">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
