@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Activity 5.1: Shop: Create Your Stylesheet
+   Activity 5.1: Shop: Create Your Stylesheet 
    ==========================================================================
    1. VARIABLES
    ========================================================================== */
@@ -7,8 +7,8 @@
   --brand: #4a2c2a;             /* Main Brand Colour (Deep Roast Espresso) */
   --accent: #8c6239;            /* Accent Colour (Creamy Caramel) */
   --dark-ink: #333333;          /* Dark Ink Body Text */
-  --muted-grey: #555555;        /* Muted Grey Text (>= 4.5:1 Contrast) */
-  --light-bg: #f7f3ef;          /* Light Background (Soft Cream) */
+  --muted-grey: #555555;        /* Muted Grey Text (>= 4.5:1 Contrast Ratio) */
+  --light-bg: #f7f3ef;          /* Soft Cream Background */
   --card-bg: #ffffff;           /* White Card Background */
   --border-color: #d4c3b3;       /* Soft Taupe Border */
   --shadow-sm: 0 4px 12px rgba(74, 44, 42, 0.06);
@@ -16,7 +16,7 @@
 }
 
 /* ==========================================================================
-   2. BASE STYLES
+   2. BASE STYLES & ACCESSIBILITY
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -34,13 +34,23 @@ body {
   text-align: center;
 }
 
-/* Accessible Keyboard Focus State */
+a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Task 5.3 & 5.4 - Accessible Focus Outline for Keyboard Users */
 input:focus,
 select:focus,
 textarea:focus,
 button:focus,
 a:focus {
-  outline: 3px solid var(--accent) !important;
+  outline: 3px solid var(--brand) !important;
   outline-offset: 3px !important;
 }
 
@@ -67,16 +77,16 @@ header h1 {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Horizontal Nav Bar */
+/* Task 5.3 - Horizontal Navigation List Styles */
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 nav li {
-  display: inline-block;
-  margin: 4px 6px;
+  display: inline-block !important;
+  margin: 4px 6px !important;
 }
 
 nav a {
@@ -113,30 +123,36 @@ footer {
 }
 
 /* ==========================================================================
-   4. COMPONENTS (Product Cards)
+   4. COMPONENTS (Task 5.4 - Product Cards & Place Cards)
    ========================================================================== */
-.product-card {
-  background-color: var(--card-bg);
-  border-radius: 16px;
-  padding: 25px;
-  margin-bottom: 25px;
-  border: 1px solid var(--border-color);
-  border-left: 7px solid var(--brand);
+.product-card,
+.place-card {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  border-left: 7px solid var(--brand) !important;  /* Task 5.4 Coloured Left Border */
+  border-radius: 16px !important;
+  padding: 25px !important;                         /* Generous Padding (>16px) */
+  margin-bottom: 25px;                              /* Card Spacing */
   text-align: center;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
 }
 
-.product-card:hover {
+.product-card:hover,
+.place-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-left-color: var(--accent);
+  border-left-color: var(--accent) !important;
 }
 
-.product-card h3 {
-  color: var(--brand);
+/* Task 5.4 - Distinct Color & Font Size for Names */
+.product-card h3,
+.product-card h2,
+.place-card h3,
+.place-card h2 {
+  color: var(--brand) !important;
   font-family: 'Georgia', serif;
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
   margin-top: 0;
   margin-bottom: 8px;
 }
@@ -148,22 +164,24 @@ footer {
   margin: 5px 0 12px 0;
 }
 
-.product-card img {
+.product-card img,
+.place-card img {
   border-radius: 12px;
   border: 1px solid var(--border-color);
   max-width: 100%;
   height: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
-.product-card a {
+.product-card a,
+.place-card a {
   color: var(--brand);
   text-decoration: none;
   font-weight: bold;
 }
 
 /* ==========================================================================
-   5. CONTACT FORM & INPUTS
+   5. COMPONENTS (Task 5.4 - Fieldsets, Form Controls, & Buttons)
    ========================================================================== */
 form {
   max-width: 450px;
@@ -172,18 +190,20 @@ form {
 }
 
 fieldset {
-  background-color: var(--card-bg);
-  border: 1.5px solid var(--border-color);
-  border-radius: 16px;
-  padding: 25px;
+  background-color: var(--card-bg) !important;
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: 16px !important;
+  padding: 25px !important;
+  margin-bottom: 25px;
   box-shadow: var(--shadow-sm);
 }
 
+/* Task 5.4 - Styled Legend Badge */
 legend {
-  background: linear-gradient(135deg, var(--brand), #351f1e);
-  color: #ffffff;
-  padding: 6px 16px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, var(--brand), #351f1e) !important;
+  color: #ffffff !important;
+  padding: 6px 16px !important;
+  border-radius: 20px !important;
   font-weight: bold;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
@@ -199,6 +219,7 @@ label {
   font-size: 0.95rem;
 }
 
+/* Consistent Input Padding and Focus States */
 input[type="text"],
 input[type="email"],
 select,
@@ -221,26 +242,32 @@ input[type="email"]:focus,
 select:focus,
 textarea:focus {
   background-color: #ffffff;
-  border-color: var(--brand);
+  border-color: var(--brand) !important;
   box-shadow: 0 0 0 3px rgba(74, 44, 42, 0.12);
 }
 
-button[type="submit"] {
+/* Task 5.4 - Styled Submit Button & Custom Link Buttons */
+button[type="submit"],
+.btn-link {
   width: 100%;
   background: linear-gradient(135deg, var(--brand), #351f1e);
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 12px;
   border: none;
   border-radius: 20px;
   font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
+  cursor: pointer;                             /* Pointer Cursor */
   box-shadow: 0 4px 10px rgba(74, 44, 42, 0.18);
   transition: all 0.25s ease;
+  display: inline-block;
+  text-align: center;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+.btn-link:hover {
   background: linear-gradient(135deg, var(--accent), #704d2c);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(140, 98, 57, 0.3);
+  color: #ffffff !important;
 }
