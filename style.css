@@ -60,7 +60,6 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
 header h1,
 header h1 a,
 header h1 span {
@@ -73,7 +72,6 @@ header h1 span {
   text-decoration: none !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-
 
 nav {
   text-align: center !important;
@@ -114,7 +112,6 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(200, 150, 62, 0.3);
 }
 
-
 main, 
 section, 
 article, 
@@ -144,8 +141,106 @@ footer {
 .product-card {
   background-color: var(--white);
   border: 1px solid var(--card-border);
-  padding: 20px;
-  margin: 0 auto 20px auto !important;
+  border-left: 6px solid var(--brand-color); /* Coloured left border using brand variable */
+  padding: 20px; /* At least 16px padding */
+  margin: 0 auto 24px auto !important; /* Margin-bottom so cards don't touch */
   border-radius: 12px;
   text-align: center !important;
+  box-shadow: var(--shadow-md);
+}
+
+/* Product Card Title & Price Typography */
+.product-card h2,
+.product-card h3,
+.product-card .product-title {
+  font-size: 1.4rem !important; /* Distinct font-size */
+  color: var(--brand-color) !important; /* Distinct color using brand variable */
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.product-card .price {
+  font-weight: 700;
+  color: var(--accent-gold) !important;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   5. CONTACT FORM STYLES (Activity 5.2)
+   ========================================================================== */
+fieldset {
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+legend {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--brand-color) !important; /* Styled legend using brand colour */
+  padding: 0 10px;
+  text-align: left !important;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--dark-ink);
+  text-align: left !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 16px; /* Consistent padding on inputs and textarea */
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--light-bg);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--dark-ink);
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus state using --brand-color variable for keyboard accessibility */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--brand-color);
+  outline-offset: 2px;
+}
+
+/* Styled Submit Button */
+button[type="submit"],
+input[type="submit"] {
+  background-color: var(--brand-color); /* Background colour */
+  color: var(--white) !important;
+  padding: 12px 28px; /* Padding */
+  border: none; /* No default border */
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer; /* Cursor pointer */
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--brand-medium);
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:focus,
+input[type="submit"]:focus {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 2px;
 }
