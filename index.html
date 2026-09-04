@@ -12,15 +12,34 @@
       color: #333333;
       text-align: center;
       margin: 0;
-      padding: 0;
+      padding: 20px;
     }
 
-    /* Target links strictly within header nav to force white color without altering header height */
+    /* Matches header card styling from about.html */
+    header {
+      background-color: #4a2c2a;
+      color: #ffffff;
+      padding: 30px 20px;
+      margin: 0 auto 30px auto;
+      max-width: 1200px;
+      border-radius: 0;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #ffffff;
+      margin: 0 0 10px 0;
+    }
+
+    header nav {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
     header nav a {
       color: #ffffff;
       text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
+      margin: 0 8px;
     }
 
     header nav a:hover {
@@ -30,7 +49,6 @@
     main {
       max-width: 650px;
       margin: 0 auto;
-      padding: 20px;
       text-align: center;
     }
 
@@ -52,8 +70,8 @@
 <body>
 
   <header>
-    <h1 style="color: #ffffff !important;">Janelle's Coffee Craft</h1>
-    <nav style="color: #ffffff;">
+    <h1>Janelle's Coffee Craft</h1>
+    <nav>
       <a href="index.html">Home</a> |
       <a href="about.html">About</a> |
       <a href="contact.html">Contact</a>
