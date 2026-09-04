@@ -71,13 +71,16 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-header h1 {
-  color: var(--white);
+/* Fixed contrast: forces title text to white on all pages */
+header h1,
+header h1 a {
+  color: var(--white) !important;
   font-family: 'Georgia', serif;
   font-size: 2.2rem;
   letter-spacing: 0.5px;
   margin: 0 0 15px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Horizontal Nav Bar Styles */
@@ -93,7 +96,7 @@ nav li {
 }
 
 nav a {
-  color: var(--white);
+  color: var(--white) !important;
   font-weight: 600;
   padding: 8px 18px;
   border-radius: 20px;
@@ -105,8 +108,8 @@ nav a {
 }
 
 nav a:hover {
-  background-color: var(--accent-gold);
-  color: var(--white);
+  background-color: var(--accent-gold) !important;
+  color: var(--white) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(200, 150, 62, 0.3);
 }
