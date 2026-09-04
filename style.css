@@ -118,6 +118,22 @@ main {
   max-width: 650px;
   margin: 30px auto;
   padding: 0;
+  text-align: center; /* Centers headings, text, and inline items */
+}
+
+/* Force center on all main text sections */
+main h1,
+main h2,
+main h3,
+main p {
+  text-align: center !important;
+}
+
+/* Force center alignment on cards and image elements */
+main .product-card,
+main img {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 footer {
@@ -138,4 +154,5 @@ footer {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 12px;
+  text-align: center;
 }
