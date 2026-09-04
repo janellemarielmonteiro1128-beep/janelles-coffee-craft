@@ -74,16 +74,25 @@ header h1 span {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Horizontal Nav Bar Styles */
+/* Horizontal Nav Bar Styles (Centered Flexbox Alignment) */
+nav {
+  text-align: center;
+  width: 100%;
+}
+
 nav ul {
   list-style: none !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
 nav li {
   display: inline-block !important;
-  margin: 0 6px !important;
+  margin: 0 !important;
 }
 
 nav a {
