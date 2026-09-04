@@ -139,30 +139,32 @@ footer {
    4. COMPONENTS (Product Cards Base)
    ========================================================================== */
 .product-card {
+  position: relative;
   background-color: var(--white);
   border: 1px solid var(--card-border);
-  border-left: 6px solid var(--brand-color); /* Coloured left border using brand variable */
-  padding: 20px; /* At least 16px padding */
-  margin: 0 auto 24px auto !important; /* Margin-bottom so cards don't touch */
+  border-left: 8px solid var(--brand-color) !important; /* Thick accent border on the left edge */
   border-radius: 12px;
-  text-align: center !important;
+  padding: 24px;
+  margin: 0 auto 24px auto !important;
+  max-width: 650px;
+  overflow: hidden; /* Keeps the rounded corners clean */
   box-shadow: var(--shadow-md);
+  text-align: center !important;
 }
 
-/* Product Card Title & Price Typography */
-.product-card h2,
-.product-card h3,
-.product-card .product-title {
-  font-size: 1.4rem !important; /* Distinct font-size */
-  color: var(--brand-color) !important; /* Distinct color using brand variable */
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-.product-card .price {
+/* Product Badge (e.g., TOP CHOICE tag from reference picture) */
+.product-card .badge,
+.badge {
+  display: inline-block;
+  background-color: var(--brand-color);
+  color: var(--white);
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--accent-gold) !important;
-  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
 }
 
 /* ==========================================================================
