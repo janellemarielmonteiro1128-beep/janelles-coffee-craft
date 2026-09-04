@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Activity 5.1: Shop: Create Your Stylesheet
+   Activity 5.1 & 5.2: Shop: Create Your Stylesheet
    ==========================================================================
-   1. VARIABLES
+   1. VARIABLES & CREATIVE THEME EXTENSIONS
    ========================================================================== */
 :root {
   --brand-color: #3d2314;       /* Main Brand Colour (Deep Roast Espresso) */
@@ -12,11 +12,13 @@
   --light-bg: #fbf8f5;         /* Soft Cream Background */
   --white: #ffffff;
   --card-border: #e8decb;
+  --shadow-sm: 0 4px 12px rgba(61, 35, 20, 0.06);
   --shadow-md: 0 8px 24px rgba(61, 35, 20, 0.1);
+  --accent-foam: #f2e9dc;      /* Subtitle/Highlight background */
 }
 
 /* ==========================================================================
-   2. BASE STYLES
+   2. BASE STYLES & ACCESSIBILITY
    ========================================================================== */
 *,
 *::before,
@@ -43,6 +45,16 @@ a {
 
 a:hover {
   color: var(--accent-gold);
+}
+
+/* Accessible Keyboard Focus State (Uses Brand Color Variable) */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--brand-color) !important;
+  outline-offset: 3px !important;
 }
 
 /* ==========================================================================
@@ -136,23 +148,56 @@ footer {
 }
 
 /* ==========================================================================
-   4. COMPONENTS (Product Cards Base)
+   4. COMPONENTS (Product Cards & Content Cards Border Styling)
    ========================================================================== */
-.product-card {
+.product-card,
+.place-card,
+fieldset {
   position: relative;
-  background-color: var(--white);
-  border: 1px solid var(--card-border);
-  border-left: 8px solid var(--brand-color) !important; /* Thick accent border on the left edge */
-  border-radius: 12px;
-  padding: 24px;
-  margin: 0 auto 24px auto !important;
+  background-color: var(--white) !important;
+  border: 1px solid var(--card-border) !important;
+  border-left: 7px solid var(--brand-color) !important; /* Thick brand color left border */
+  border-radius: 16px !important;
+  padding: 28px !important;
+  margin: 0 auto 25px auto !important;
   max-width: 650px;
-  overflow: hidden; /* Keeps the rounded corners clean */
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+  overflow: hidden;
   text-align: center !important;
 }
 
-/* Product Badge (e.g., TOP CHOICE tag from reference picture) */
+/* Hover Effect: Border changes to gold accent */
+.product-card:hover,
+.place-card:hover,
+fieldset:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--accent-gold) !important;
+}
+
+/* Product Card Typography */
+.product-card h2, 
+.product-card h3,
+.place-card h2, 
+.place-card h3 {
+  margin-top: 0;
+  color: var(--brand-color) !important;
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.3px;
+}
+
+.product-card img,
+.place-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Product Badge (e.g., TOP CHOICE tag) */
 .product-card .badge,
 .badge {
   display: inline-block;
@@ -170,22 +215,18 @@ footer {
 /* ==========================================================================
    5. CONTACT FORM STYLES (Activity 5.2)
    ========================================================================== */
-fieldset {
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
-  background-color: var(--white);
-  box-shadow: var(--shadow-md);
-}
-
+/* Styled Legend using Brand Gradient */
 legend {
-  font-family: 'Georgia', serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--brand-color) !important; /* Styled legend using brand colour */
-  padding: 0 10px;
-  text-align: left !important;
+  background: linear-gradient(135deg, var(--brand-color), var(--brand-medium)) !important;
+  color: var(--white) !important;
+  padding: 7px 18px !important;
+  border-radius: 20px !important;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(61, 35, 20, 0.18);
+  margin-bottom: 15px;
 }
 
 form label {
@@ -202,47 +243,49 @@ input[type="tel"],
 textarea,
 select {
   width: 100%;
-  padding: 12px 16px; /* Consistent padding on inputs and textarea */
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  background-color: var(--light-bg);
+  padding: 12px 16px;
+  border: 1.5px solid var(--card-border);
+  border-radius: 10px;
+  margin-bottom: 18px;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--dark-ink);
-  margin-bottom: 16px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--light-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-/* Focus state using --brand-color variable for keyboard accessibility */
-input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
 textarea:focus,
 select:focus {
-  outline: 3px solid var(--brand-color);
-  outline-offset: 2px;
+  background-color: var(--white);
+  border-color: var(--brand-color) !important;
+  box-shadow: 0 0 0 3px rgba(61, 35, 20, 0.12);
 }
 
-/* Styled Submit Button */
+/* Styled Submit Button & Links */
 button[type="submit"],
-input[type="submit"] {
-  background-color: var(--brand-color); /* Background colour */
+input[type="submit"],
+.btn-link {
+  background: linear-gradient(135deg, var(--brand-color), var(--brand-medium));
   color: var(--white) !important;
-  padding: 12px 28px; /* Padding */
-  border: none; /* No default border */
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer; /* Cursor pointer */
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(61, 35, 20, 0.15);
 }
 
 button[type="submit"]:hover,
-input[type="submit"]:hover {
-  background-color: var(--brand-medium);
+input[type="submit"]:hover,
+.btn-link:hover {
+  opacity: 0.95;
   transform: translateY(-2px);
-}
-
-button[type="submit"]:focus,
-input[type="submit"]:focus {
-  outline: 3px solid var(--accent-gold);
-  outline-offset: 2px;
+  box-shadow: 0 6px 14px rgba(61, 35, 20, 0.25);
+  color: var(--white);
 }
