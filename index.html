@@ -12,44 +12,34 @@
       color: #333333;
       text-align: center;
       margin: 0;
-      padding: 0; /* Removed padding to let header span full width */
+      padding: 0;
     }
 
-    header {
-      background-color: #4a2c2a;
-      padding: 20px 0;
-      margin-bottom: 20px;
-    }
-
-    header, header nav, header h1 {
-      color: #ffffff !important;
-      text-align: center;
-    }
-
-    header nav a, header a, nav a {
-      color: #ffffff !important;
-      text-decoration: none !important;
+    /* Target links strictly within header nav to force white color without altering header height */
+    header nav a {
+      color: #ffffff;
+      text-decoration: none;
       font-weight: bold;
       margin: 0 10px;
     }
 
-    header nav a:hover, header a:hover, nav a:hover {
-      color: #d4c3b3 !important;
+    header nav a:hover {
+      color: #d4c3b3;
     }
 
     main {
       max-width: 650px;
       margin: 0 auto;
-      padding: 0 20px 20px 20px;
-      text-align: center !important;
+      padding: 20px;
+      text-align: center;
     }
 
     main h2, main p {
-      text-align: center !important;
+      text-align: center;
     }
 
     table.product-card {
-      margin: 0 auto 25px auto !important;
+      margin: 0 auto 25px auto;
       max-width: 500px;
       width: 100%;
     }
@@ -62,8 +52,8 @@
 <body>
 
   <header>
-    <h1 style="color: #ffffff !important; margin-bottom: 5px;">Janelle's Coffee Craft</h1>
-    <nav>
+    <h1 style="color: #ffffff !important;">Janelle's Coffee Craft</h1>
+    <nav style="color: #ffffff;">
       <a href="index.html">Home</a> |
       <a href="about.html">About</a> |
       <a href="contact.html">Contact</a>
