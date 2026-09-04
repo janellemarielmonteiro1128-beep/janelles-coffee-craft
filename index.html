@@ -12,42 +12,50 @@
       color: #333333;
       text-align: center;
       margin: 0;
-      padding: 20px;
+      padding: 0; /* Removed padding to let header span full width */
     }
 
-    /* Force header and nav links to display centered with white text */
+    header {
+      background-color: #4a2c2a;
+      padding: 20px 0;
+      margin-bottom: 20px;
+    }
+
     header, header nav, header h1 {
       color: #ffffff !important;
       text-align: center;
     }
 
     header nav a, header a, nav a {
-      color: #ffffff;
-      text-decoration: none;
+      color: #ffffff !important;
+      text-decoration: none !important;
       font-weight: bold;
       margin: 0 10px;
     }
 
     header nav a:hover, header a:hover, nav a:hover {
-      color: #d4c3b3;
+      color: #d4c3b3 !important;
     }
 
-    /* Force all main content sections, headings, and paragraphs to center */
     main {
       max-width: 650px;
       margin: 0 auto;
-      text-align: center;
+      padding: 0 20px 20px 20px;
+      text-align: center !important;
     }
 
     main h2, main p {
-      text-align: center;
+      text-align: center !important;
     }
 
-    /* Center product tables horizontally */
     table.product-card {
-      margin: 0 auto 25px auto;
+      margin: 0 auto 25px auto !important;
       max-width: 500px;
       width: 100%;
+    }
+
+    footer {
+      padding: 20px 0;
     }
   </style>
 </head>
