@@ -1,0 +1,83 @@
+/* 1. VARIABLES */
+:root {
+  --brand-color: #4a2c2a;
+  --dark-ink: #1f1f1f;
+  --muted-grey: #8c7b75;
+  --light-bg: #fdfaf7;
+}
+
+/* 2. BASE STYLES */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-ink);
+  background-color: var(--light-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. LAYOUT REGIONS */
+header {
+  background-color: var(--brand-color);
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+}
+
+/* NAV STYLES */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0e8e0;
+  color: var(--muted-grey);
+  margin-top: 40px;
+}
+
+/* 4. COMPONENTS */
+.product-card {
+  border: 1px solid #e0d6cd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.product-card h3 {
+  color: var(--brand-color);
+  margin-top: 0;
+}
