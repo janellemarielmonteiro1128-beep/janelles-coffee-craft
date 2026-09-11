@@ -58,50 +58,62 @@ textarea:focus {
 }
 
 /* ==========================================================================
-   3. LAYOUT REGIONS (Header, Nav, Main, Footer)
+   3. LAYOUT REGIONS & FLEXBOX HEADER (Activity 6.1)
    ========================================================================== */
+.site-header,
 header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-medium) 100%) !important;
   color: var(--white) !important;
-  padding: 30px 20px;
-  text-align: center !important;
+  padding: 20px 30px !important;
   border-radius: 16px;
   box-shadow: var(--shadow-md);
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto 25px auto;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Far Left: Shop Name */
 header h1,
-header h1 a,
-header h1 span {
+.site-header h1 {
   color: var(--white) !important;
   font-family: 'Georgia', serif !important;
-  font-size: 2.2rem !important;
+  font-size: 1.6rem !important;
   letter-spacing: 0.5px;
-  margin: 0 0 15px 0 !important;
-  display: block;
+  margin: 0 !important;
   text-decoration: none !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: left !important;
 }
 
+header h1 a,
+.site-header h1 a {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+
+/* Far Right: Nav Flex Container */
 nav {
-  text-align: center !important;
-  width: 100%;
+  margin: 0 !important;
+  width: auto !important;
 }
 
-nav ul {
+.site-header nav ul,
+header nav ul {
+  display: flex !important;
+  gap: 16px !important; /* Flexbox gap used for link spacing */
   list-style: none !important;
   padding: 0 !important;
-  margin: 0 auto !important;
-  display: inline-flex !important;
-  justify-content: center !important;
-  align-items: center;
-  gap: 12px;
+  margin: 0 !important;
+  align-items: center !important;
 }
 
-nav li {
-  display: inline-block !important;
+/* Removed display: inline-block on li; Flexbox replaces it */
+.site-header nav li,
+header nav li {
+  display: block !important; 
   margin: 0 !important;
 }
 
@@ -115,6 +127,7 @@ nav a {
   display: inline-block;
   text-decoration: none !important;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -122,6 +135,22 @@ nav a:hover {
   color: var(--white) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(200, 150, 62, 0.3);
+}
+
+/* Centered Banner/Call-to-Action (Lesson 6.4: Flexbox Centering) */
+.hero-banner,
+.cta-banner {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 120px; /* Explicit height so vertical centering has room to work */
+  background: var(--brand-color);
+  color: var(--white);
+  border-radius: 12px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center !important;
+  box-shadow: var(--shadow-sm);
 }
 
 main, 
