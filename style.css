@@ -157,7 +157,7 @@ main,
 section, 
 article, 
 div:not(nav div) {
-  max-width: 650px;
+  max-width: 900px !important; /* Updated from 650px to fit side-by-side grid */
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
@@ -179,7 +179,16 @@ footer {
 /* ==========================================================================
    4. COMPONENTS (Product Cards & Content Cards Border Styling)
    ========================================================================== */
-.product-card,
+.product-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+  justify-content: center !important;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+}
+
+   .product-card,
 .place-card,
 fieldset {
   position: relative;
@@ -194,6 +203,12 @@ fieldset {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
   overflow: hidden;
   text-align: center !important;
+}
+
+.product-card {
+  flex: 1 1 240px !important; /* Grows to fill space, shrinks as needed, wraps at ~240px */
+  margin: 0 !important;       /* Uses flex gap spacing instead of vertical margins */
+  max-width: 100%;
 }
 
 /* Hover Effect: Border changes to gold accent */
