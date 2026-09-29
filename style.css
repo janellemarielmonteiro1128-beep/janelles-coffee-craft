@@ -143,7 +143,7 @@ nav a:hover {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  min-height: 120px; /* Explicit height so vertical centering has room to work */
+  min-height: 120px;
   background: var(--brand-color);
   color: var(--white);
   border-radius: 12px;
@@ -164,6 +164,15 @@ div:not(nav div) {
 }
 
 h1, h2, h3, h4, p, span, li {
+  text-align: center;
+}
+
+.section-title {
+  color: var(--brand-color);
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -239,6 +248,13 @@ fieldset:hover {
   border-radius: 12px;
   border: 1px solid var(--card-border);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.product-price {
+  font-weight: bold;
+  color: var(--brand-color);
+  font-size: 1.1rem;
+  margin: 8px 0;
 }
 
 /* Product Badge (e.g., TOP CHOICE tag) */
@@ -364,7 +380,7 @@ aside {
   padding: 24px 20px;
   box-shadow: var(--shadow-sm);
   max-width: 100% !important;
-  margin: 0 !important; /* Kept at 0 to follow clean CSS grid layout standards */
+  margin: 52px 0 0 0 !important; /* Top margin offsets "Our Products" title to align the sidebar top border directly with the top edge of the 3 product cards */
   text-align: left !important;
   align-self: start;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
@@ -390,7 +406,7 @@ aside h3 {
   letter-spacing: 0.3px;
 }
 
-aside h3:nth-of-type(2) {
+aside h3:nth-of-type(n+2) {
   margin-top: 24px;
 }
 
@@ -400,6 +416,10 @@ aside p {
   color: var(--dark-ink);
   margin: 4px 0;
   padding-left: 4px;
+}
+
+.aside-welcome {
+  margin-bottom: 20px;
 }
 
 aside ul {
