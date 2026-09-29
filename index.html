@@ -8,60 +8,81 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <h1><a href="index.html">Janelle's Coffee Craft</a></h1>
-    <nav>
+  <div class="page">
+
+    <!-- Grid Area: masthead -->
+    <header class="site-header">
+      <h1><a href="index.html">Janelle's Coffee Craft</a></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Grid Area: side (Direct child of .page) -->
+    <aside>
+      <h3>Opening Hours</h3>
+      <p>Mon - Sat: 7:00 AM - 10:00 PM</p>
+      <p>Sunday: 8:00 AM - 8:00 PM</p>
+
+      <h3>Categories</h3>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Espresso Drinks</a></li>
+        <li><a href="#">Cold Brews</a></li>
+        <li><a href="#">Pastries</a></li>
       </ul>
-    </nav>
-  </header>
+    </aside>
 
-  <main>
-    <h2>Welcome to Janelle's Coffee Craft</h2>
-    <p>Hand-crafted coffee, brewed with passion and high-quality beans right in Sampaloc, Manila.</p>
+    <!-- Grid Area: main -->
+    <main>
+      <h2>Welcome to Janelle's Coffee Craft</h2>
+      <p>Hand-crafted coffee, brewed with passion and high-quality beans right in Sampaloc, Manila.</p>
 
-    <h2>Our Products</h2>
+      <h2>Our Products</h2>
 
-    <!-- Wrapped in product-grid container for Flexbox side-by-side layout -->
-    <div class="product-grid">
+      <!-- Flexbox container for side-by-side product cards -->
+      <div class="product-grid">
 
-      <!-- Coffee Item 1 -->
-      <div class="product-card">
-        <h3>1. Caramel Macchiato</h3>
-        <p class="product-price">₱130</p>
-        <p>Rich espresso layered with creamy milk and sweet caramel drizzle.</p>
-        <a href="products/caramel-macchiato.html">
-          <img src="coffee1.jpg" alt="Caramel Macchiato" width="280"><br><br>
-          <b>Check out our Signature Caramel Macchiato &rarr;</b>
-        </a>
+        <!-- Coffee Item 1 -->
+        <div class="product-card">
+          <h3>1. Caramel Macchiato</h3>
+          <p class="product-price">₱130</p>
+          <p>Rich espresso layered with creamy milk and sweet caramel drizzle.</p>
+          <a href="products/caramel-macchiato.html">
+            <img src="coffee1.jpg" alt="Caramel Macchiato" width="280"><br><br>
+            <b>Check out our Signature Caramel Macchiato &rarr;</b>
+          </a>
+        </div>
+
+        <!-- Coffee Item 2 -->
+        <div class="product-card">
+          <h3>2. Iced Spanish Latte</h3>
+          <p class="product-price">₱120</p>
+          <p>Rich espresso blended with sweet condensed milk and creamy fresh milk.</p>
+          <img src="coffee2.jpg" alt="Iced Spanish Latte" width="280">
+        </div>
+
+        <!-- Coffee Item 3 -->
+        <div class="product-card">
+          <h3>3. Buttercream Latte</h3>
+          <p class="product-price">₱250</p>
+          <p>Rich espresso blended with silky cream and topped with signature buttercream foam.</p>
+          <img src="coffee3.jpg" alt="Buttercream Latte" width="280">
+        </div>
+
       </div>
 
-      <!-- Coffee Item 2 -->
-      <div class="product-card">
-        <h3>2. Iced Spanish Latte</h3>
-        <p class="product-price">₱120</p>
-        <p>Rich espresso blended with sweet condensed milk and creamy fresh milk.</p>
-        <img src="coffee2.jpg" alt="Iced Spanish Latte" width="280">
-      </div>
+    </main>
 
-      <!-- Coffee Item 3 -->
-      <div class="product-card">
-        <h3>3. Buttercream Latte</h3>
-        <p class="product-price">₱250</p>
-        <p>Rich espresso blended with silky cream and topped with signature buttercream foam.</p>
-        <img src="coffee3.jpg" alt="Buttercream Latte" width="280">
-      </div>
+    <!-- Grid Area: foot -->
+    <footer>
+      <p>&copy; 2026 Janelle's Coffee Craft. All rights reserved.</p>
+    </footer>
 
-    </div>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Janelle's Coffee Craft. All rights reserved.</p>
-  </footer>
+  </div>
 
 </body>
 </html>
