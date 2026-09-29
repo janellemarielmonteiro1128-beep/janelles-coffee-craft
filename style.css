@@ -351,15 +351,16 @@ input[type="submit"]:hover,
 }
 
 /* ==========================================================================
-   6. PAGE SKELETON GRID (Activity 7.1)
+   6. PAGE SKELETON GRID (Activity 7.1 & 7.2 Mobile-First Base)
    ========================================================================== */
 .page {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "masthead masthead"
-    "side     main"
-    "foot     foot";
+    "masthead"
+    "main"
+    "side"
+    "foot";
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
@@ -380,9 +381,8 @@ aside {
   padding: 24px 20px;
   box-shadow: var(--shadow-sm);
   max-width: 100% !important;
-  margin: 52px 0 0 0 !important; /* Top margin offsets "Our Products" title to align the sidebar top border directly with the top edge of the 3 product cards */
+  margin: 0 !important;
   text-align: left !important;
-  align-self: start;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
 }
 
@@ -462,4 +462,22 @@ footer {
   grid-area: foot; 
   max-width: 100% !important;
   margin: 0 !important;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (Lesson 7.5: Enhance Upward at Desktop Widths)
+   ========================================================================== */
+@media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
+  }
+
+  aside {
+    margin-top: 52px !important; /* Offsets section title to align sidebar top edge with product cards */
+    align-self: start;
+  }
 }
