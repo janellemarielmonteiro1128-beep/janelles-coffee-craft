@@ -335,16 +335,16 @@ input[type="submit"]:hover,
 }
 
 /* ==========================================================================
-   6. PAGE SKELETON GRID (Activity 7.1) - Styled & Aligned Sidebar
+   6. PAGE SKELETON GRID (Activity 7.1)
    ========================================================================== */
 .page {
   display: grid;
-  grid-template-columns: 260px 1fr; /* Slightly wider sidebar for better content breathing room */
+  grid-template-columns: 220px 1fr;
   grid-template-areas:
     "masthead masthead"
     "side     main"
     "foot     foot";
-  gap: 24px;
+  gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -355,30 +355,27 @@ header,
   grid-area: masthead; 
 }
 
-/* Sidebar - Styled to match product cards & aligned with product section */
 aside { 
   grid-area: side;
   background-color: var(--white);
   border: 1px solid var(--card-border);
-  border-left: 7px solid var(--brand-color) !important; /* Matches product card accent border */
+  border-left: 7px solid var(--brand-color) !important;
   border-radius: 16px;
   padding: 24px 20px;
   box-shadow: var(--shadow-sm);
   max-width: 100% !important;
-  margin-top: 115px !important; /* Pushes sidebar down so top aligns perfectly with Product Cards */
+  margin: 0 !important; /* Kept at 0 to follow clean CSS grid layout standards */
   text-align: left !important;
   align-self: start;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
 }
 
-/* Subtle hover interaction like product cards */
 aside:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-left-color: var(--accent-gold) !important;
 }
 
-/* Sidebar Headings - Styled with warm foam background ribbons */
 aside h3 {
   text-align: left !important;
   color: var(--brand-color);
@@ -405,7 +402,6 @@ aside p {
   padding-left: 4px;
 }
 
-/* Interactive Pill Navigation for Categories */
 aside ul {
   list-style: none;
   padding-left: 0;
