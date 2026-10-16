@@ -12,7 +12,7 @@
 
     <!-- Grid Area: masthead -->
     <header class="site-header">
-      <h1><a href="index.html">Janelle's Coffee Craft</a></h1>
+      <h1><a href="index.html" id="guide-title">Janelle's Coffee Craft</a></h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -44,6 +44,9 @@
     <!-- Grid Area: main -->
     <main>
       <h2 class="section-title">Our Products</h2>
+
+      <!-- JS Computed Calculation Display -->
+      <p id="review-count" style="font-weight: bold; color: var(--brand-color); text-align: center; margin-bottom: 20px;"></p>
 
       <!-- Flexbox container for side-by-side product cards -->
       <div class="product-grid">
@@ -81,10 +84,12 @@
 
     <!-- Grid Area: foot -->
     <footer>
-      <p>&copy; 2026 Janelle's Coffee Craft. All rights reserved.</p>
+      <p id="footer-copyright">&copy; 2026 Janelle's Coffee Craft. All rights reserved.</p>
     </footer>
 
   </div>
 
+  <!-- Activity 8.1 Linked Script -->
+  <script src="script.js"></script>
 </body>
 </html>
