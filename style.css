@@ -477,7 +477,7 @@ footer {
   }
 
   aside {
-    margin-top: 52px !important; /* Offsets section title to align sidebar top edge with product cards */
+    margin-top: 200px !important; /* Perfectly aligns sidebar top edge with the 3 coffee product cards */
     align-self: start;
   }
 }

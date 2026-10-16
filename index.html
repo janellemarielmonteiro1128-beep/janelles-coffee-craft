@@ -23,7 +23,7 @@
     </header>
 
     <!-- Grid Area: side (Direct child of .page) -->
-    <aside>
+    <aside style="margin-top: 0;">
       <div class="aside-welcome">
         <h3>Welcome</h3>
         <p>Hand-crafted coffee, brewed with passion and high-quality beans right in Sampaloc, Manila.</p>
@@ -43,17 +43,27 @@
 
     <!-- Grid Area: main -->
     <main>
-      <h2 class="section-title">Our Products</h2>
+      <!-- Perfectly centered relative to the product cards by offsetting the sidebar width -->
+      <div style="text-align: center; margin-bottom: 25px; margin-left: -110px;">
+        <h2 class="section-title">Our Products</h2>
 
-      <!-- JS Computed Calculation Display -->
-      <p id="review-count" style="font-weight: bold; color: var(--brand-color); text-align: center; margin-bottom: 20px;"></p>
+        <!-- JS Computed Calculation Display -->
+        <p id="review-count" style="font-weight: bold; color: var(--brand-color); text-align: center; margin-bottom: 10px;"></p>
+
+        <!-- Activity 8.4 Decision Outputs -->
+        <div style="text-align: center; font-size: 0.95rem;">
+          <p id="stock-status" style="margin: 4px 0;"></p>
+          <p id="delivery-check" style="margin: 4px 0;"></p>
+          <p id="shop-status-note" style="margin: 4px 0;"></p>
+        </div>
+      </div>
 
       <!-- Flexbox container for side-by-side product cards -->
       <div class="product-grid">
 
         <!-- Coffee Item 1 -->
         <div class="product-card">
-          <h3>1. Caramel Macchiato</h3>
+          <h3>Caramel Macchiato</h3>
           <p class="product-price">₱130</p>
           <p>Rich espresso layered with creamy milk and sweet caramel drizzle.</p>
           <a href="products/caramel-macchiato.html">
@@ -89,7 +99,7 @@
 
   </div>
 
-  <!-- Activity 8.2 Linked Script -->
+  <!-- Activity 8.2 / 8.4 Linked Script -->
   <script src="script.js"></script>
 </body>
 </html>
